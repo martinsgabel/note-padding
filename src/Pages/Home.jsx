@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NotePad from "../Components/NotePad";
 import StickNotes from "../Components/StickNotes";
 
 export default function Home() {
   const [title, setTitle] = useState('')
   const [note, setNote] = useState('')
-  const [noteList, setNoteList] = useState([])
+  const [noteList, setNoteList] = useState(JSON.parse(localStorage.getItem('noteList')) ?? [])
 
   function submitNote() {
     const noteObj = {
-      id: Math.random(),
+      id: Math.floor(Math.random() * 90000) + 10000,
       title,
       note
     }
@@ -18,10 +18,17 @@ export default function Home() {
 
     setNoteList(newNote)
 
-    localStorage.setItem('noteList', JSON.stringify(noteList))
-
     setNote('')
     setTitle('')
+  }
+
+  useEffect(() => {
+    localStorage.setItem('noteList', JSON.stringify(noteList))
+  }, [noteList])
+
+  function deleteNote(id) {
+    const updatedList = noteList.filter(item => item.id !== Number(id))
+    setNoteList(updatedList)
   }
 
   return (
@@ -34,9 +41,10 @@ export default function Home() {
         setNote={ (e) => setNote(e.target.value) }
         submitNote={ () => submitNote() } 
       />
-      <StickNotes
+      { noteList && <StickNotes
         list={ noteList }
-      />
+        deleteNote={ (e) => deleteNote(e.target.id) }
+      />}
     </main>
   )
 }

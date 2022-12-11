@@ -1,15 +1,22 @@
 import PropTypes from 'prop-types';
 
-export default function StickNotes({list}) {
+export default function StickNotes({list, deleteNote}) {
   return (
     <div>
-      { list && (list
+      { list
         .map(note => (
           <div key={ note.id }>
             <h1>{ note.title }</h1>
             <div>{ note.note }</div>
+            <button 
+              id={ note.id }
+              type="button"
+              onClick={ deleteNote }
+            >
+              X
+            </button>
           </div>
-        )))
+        ))
       }
     </div>
   )
