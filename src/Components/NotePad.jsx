@@ -20,6 +20,7 @@ export default function NotePad({ title, note, setTitle, setNote, submitNote }) 
       <button
         type="button"
         onClick={ submitNote }
+        disabled={ !title && !note }
       >
         Send
       </button>
