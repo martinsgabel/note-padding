@@ -1,47 +1,36 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function NotePad() {
-  const [title, setTitle] = useState('')
-  const [note, setNote] = useState('')
-  const [noteList, setNoteList] = useState([])
-
-  function submitNote() {
-    const noteObj = {
-      id: Math.random(),
-      title,
-      note
-    }
-
-    setNoteList([...noteList, noteObj])
-
-    localStorage.setItem('noteList', JSON.stringify(noteList))
-
-    setNote('')
-    setTitle('')
-  }
-
+export default function NotePad({ title, note, setTitle, setNote, submitNote }) {
   return (
     <form>
       <input
         label="note-title"
         placeholder="Note Title"
         type="text"
-        value={title}
-        onChange={ (e) => setTitle(e.target.value) }
+        value={ title }
+        onChange={ setTitle }
       />
       <input
         label="note-text"
         placeholder="Write your note here"
         type="text"
-        value={note}
-        onChange={ (e) => setNote(e.target.value) }
+        value={ note }
+        onChange={ setNote }
       />
       <button
         type="button"
-        onClick={ () => submitNote() }
+        onClick={ submitNote }
       >
         Send
       </button>
     </form>
   )
+}
+
+NotePad.propTypes = {
+  title: PropTypes.string.isRequired, 
+  note: PropTypes.string.isRequired, 
+  setTitle: PropTypes.func, 
+  setNote: PropTypes.func, 
+  submitNote: PropTypes.func,
 }
