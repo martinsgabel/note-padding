@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { HiOutlineTrash } from "react-icons/hi";
 
 export default function StickNotes({list, deleteNote}) {
   return (
@@ -13,7 +14,7 @@ export default function StickNotes({list, deleteNote}) {
               type="button"
               onClick={ deleteNote }
             >
-              X
+              <HiOutlineTrash />
             </button>
           </div>
         ))
