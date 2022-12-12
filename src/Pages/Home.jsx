@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
+import EditingPad from "../Components/EditingPad";
 import NotePad from "../Components/NotePad";
 import StickNotes from "../Components/StickNotes";
 
 export default function Home() {
   const [title, setTitle] = useState('')
+  const [editTitle, setEditTitle] = useState('')
   const [note, setNote] = useState('')
+  const [editNote, setEditNote] = useState('')
+  const [editing, setEditing] = useState(false)
   const [noteList, setNoteList] = useState(JSON.parse(localStorage.getItem('noteList')) ?? [])
 
   function submitNote() {
@@ -31,6 +35,12 @@ export default function Home() {
     setNoteList(updatedList)
   }
 
+  function editingNote(target) {
+    setEditing(true)
+    setEditTitle(target.title)
+    setEditNote(target.note)
+  }
+
   return (
     <main>
       Note Padding
@@ -44,6 +54,16 @@ export default function Home() {
       { noteList && <StickNotes
         list={ noteList }
         deleteNote={ (e) => deleteNote(e.target.id) }
+        editNote={ (e) => editingNote(e.target) }
+      />}
+      { editing && <EditingPad
+        title={ title }
+        editTitle={ editTitle }
+        note={ note }
+        editNote={ editNote }
+        setTitle={ (e) => setTitle(e.target.value) }
+        setNote={ (e) => setNote(e.target.value) }
+        submitNote={ () => submitNote() } 
       />}
     </main>
   )

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { HiOutlineTrash } from "react-icons/hi";
+import { HiOutlineTrash, HiPencilAlt } from "react-icons/hi";
 
-export default function StickNotes({list, deleteNote}) {
+export default function StickNotes({list, deleteNote, editNote}) {
   return (
     <div>
       { list
@@ -12,9 +12,16 @@ export default function StickNotes({list, deleteNote}) {
             <button 
               id={ note.id }
               type="button"
+              onClick={ editNote }
+            >
+              <HiPencilAlt size={17} />
+            </button>
+            <button 
+              id={ note.id }
+              type="button"
               onClick={ deleteNote }
             >
-              <HiOutlineTrash />
+              <HiOutlineTrash size={17} />
             </button>
           </div>
         ))
