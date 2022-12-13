@@ -39,32 +39,17 @@ export default function Home() {
   }
 
   function saveEditedNote(id) {
-    console.log('save edit:', id);
-    console.log('save edit:', noteList);
-    console.log('newtitle:', newTitle);
+    for (const obj of noteList) {
+      if (obj.id === Number(id)) {
+        obj.title = newTitle
+        obj.note = newNote
+        break
+      }
+    }
 
-    noteList.splice(id, 2, { id: Number(id), title: newTitle, note: newNote });
+    localStorage.setItem('noteList', JSON.stringify(noteList))
 
-    // const index = noteList.findIndex(item => item.id === Number(id))
-
-    // console.log('selected Id:', index);
-    // console.log('selected Obj:',  noteList[index]); 
-    // console.log('selected Obj Id:',  noteList[index].id);
-
-    // const editedObj = {
-    //   noteList[index].id: id,
-    //   noteList[index].title: newTitle,
-    //   noteList[index].note: newNote
-    // }
-
-    // noteList[index].title = newTitle;
-    // noteList[index].note = newNote;
-
-    // setNoteList(noteList[index].title = newTitle)
-    // setNoteList(noteList[index].note = newNote)
-    
-    // console.log('changed Obj:',  noteList[index]); 
-    console.log(noteList);    
+    setEditing(null)
   }
 
   return (

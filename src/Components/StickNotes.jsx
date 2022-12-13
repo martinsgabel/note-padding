@@ -3,7 +3,6 @@ import { HiOutlineTrash, HiPencilAlt } from "react-icons/hi";
 import EditingPad from './EditingPad';
 
 export default function StickNotes({list, editing, deleteNote, editNote, saveEditedNote, setNewTitle, setNewNote}) {
-  console.log('Lista do StickNotes', list);
   return (
     <div>
       { list
