@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { HiOutlineTrash, HiPencilAlt } from "react-icons/hi";
 import EditingPad from './EditingPad';
 
-export default function StickNotes({list, editing, deleteNote, editNote, saveEditedNote, setNewTitle, setNewNote}) {
+export default function StickNotes({list, editing, newTitle, newNote, cancelEditing, deleteNote, editNote, saveEditedNote, setNewTitle, setNewNote}) {
   return (
     <div>
       { list
@@ -25,12 +25,13 @@ export default function StickNotes({list, editing, deleteNote, editNote, saveEdi
               <HiOutlineTrash size={17} />
             </button>
             { editing === note.id ? (<EditingPad
-              prevTitle={ note.title }
-              prevNote={ note.note }
+              newTitle={ newTitle }
+              newNote={ newNote }
               id={ note.id }
               saveEditedNote={ saveEditedNote }
               setNewTitle={ setNewTitle }
-              setNewNote={ setNewNote } />) : ''
+              setNewNote={ setNewNote }
+              cancelEditing={ cancelEditing } />) : ''
             }
           </div>
         ))
@@ -51,4 +52,7 @@ StickNotes.propTypes = {
   saveEditedNote: PropTypes.func,
   setNewTitle: PropTypes.func,
   setNewNote: PropTypes.func,
-}
+  newTitle: PropTypes.string,
+  newNote: PropTypes.string,
+  cancelEditing: PropTypes.func,
+  }

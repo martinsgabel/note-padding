@@ -36,13 +36,21 @@ export default function Home() {
 
   function editingNote(target) {
     setEditing(Number(target.id))
+    
+    for (const obj of noteList) {
+      if (obj.id === Number(target.id)) {
+        setNewTitle(obj.title)
+        setNewNote(obj.note)
+        break
+      }
+    }
   }
 
   function saveEditedNote(id) {
     for (const obj of noteList) {
       if (obj.id === Number(id)) {
-        obj.title = newTitle
-        obj.note = newNote
+        if (newTitle !== '') obj.title = newTitle
+        if (newNote !== '') obj.note = newNote
         break
       }
     }
@@ -65,11 +73,14 @@ export default function Home() {
       { noteList && <StickNotes
         list={ noteList }
         editing={ editing }
+        newTitle={ newTitle }
+        newNote={ newNote }
         deleteNote={ (e) => deleteNote(e.target.id) }
         editNote={ (e) => editingNote(e.target) }
         saveEditedNote={ (e) => saveEditedNote(e.target.id) }
         setNewTitle={ (e) => setNewTitle(e.target.value) }
         setNewNote={ (e) => setNewNote(e.target.value) }
+        cancelEditing={ () => setEditing(null) }
       />}
     </main>
   )
