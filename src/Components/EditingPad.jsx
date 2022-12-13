@@ -1,27 +1,23 @@
 import PropTypes from 'prop-types';
 
-export default function EditingPad({ 
-  title, editTitle, note, editNote, setTitle, setNote, submitNote 
-}) {
+export default function EditingPad({ id, saveEditedNote, setNewTitle, setNewNote }) {
+
   return (
     <form>
       <input
         label="note-title"
-        placeholder={ editTitle }
         type="text"
-        value={ editTitle }
-        onChange={ setTitle }
+        onChange={ setNewTitle }
       />
       <input
         label="note-text"
-        placeholder={ editNote }
         type="text"
-        value={ editNote }
-        onChange={ setNote }
+        onChange={ setNewNote }
       />
       <button
+        id={ id }
         type="button"
-        onClick={ submitNote }
+        onClick={ saveEditedNote }
       >
         Save
       </button>
@@ -30,11 +26,9 @@ export default function EditingPad({
 }
 
 EditingPad.propTypes = {
-  title: PropTypes.string.isRequired, 
-  editTitle: PropTypes.string.isRequired,
-  note: PropTypes.string.isRequired, 
-  editNote: PropTypes.string.isRequired,
-  setTitle: PropTypes.func, 
-  setNote: PropTypes.func, 
-  submitNote: PropTypes.func,
+  id: PropTypes.number.isRequired,
+  saveEditedNote: PropTypes.func,
+  setNewTitle: PropTypes.func, 
+  setNewNote: PropTypes.func, 
+  // submitNote: PropTypes.func,
 }
