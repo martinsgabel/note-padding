@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import NotePad from "../Components/NotePad";
 import StickNotes from "../Components/StickNotes";
+import "./Home.css";
 
 export default function Home() {
   const [title, setTitle] = useState("");
