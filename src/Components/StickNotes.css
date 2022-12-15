@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.listof-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.single-card {
+  background-color: #2C3639;
+  border-right: 2px solid #A27B5C;
+  border-bottom: 2px solid #A27B5C;
+  margin: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 29%;
+  flex-wrap: wrap;
+}
+
+.header-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: "Baskerville Bold-Italic";
+  src: url(./Fonts/BaskervilleBoldItalicBT.ttf); 
+}
+
+@font-face {
+  font-family: "Baskerville";
+  src: url(./Fonts/baskvl.ttf); 
+}
+
+.titleof-card {
+  color: #DCD7C9;
+  font-family: "Baskerville Bold-Italic";
+  font-size: 30px;
+  font-weight: 400;
+  padding-left: 1px;
+  flex-grow: 3;
+}
+
+.textof-card {
+  color: #DCD7C9;
+  font-family: "Baskerville";
+  font-size: 1.15em;
+  letter-spacing: 0.04em;
+}
+
+.editbuttonof-card svg, .deletebuttonof-card svg {
+  color: #DCD7C9;
+  pointer-events: none;
+}
+
+.deletebuttonof-card, .editbuttonof-card {
+  margin: 4px;
+  padding: 5px;
+  background-color: transparent;
+}

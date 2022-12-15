@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import { HiOutlineTrash, HiPencilAlt } from "react-icons/hi";
+import { HiOutlineTrash, HiOutlinePencilAlt } from "react-icons/hi";
 import EditingPad from "./EditingPad";
+import "./StickNotes.css";
 
 export default function StickNotes({
   list,
@@ -15,17 +16,19 @@ export default function StickNotes({
   setNewNote,
 }) {
   return (
-    <div>
+    <div className="listof-cards">
       {list.map((note) => (
-        <div key={note.id}>
-          <h1>{note.title}</h1>
-          <div>{note.note}</div>
-          <button id={note.id} type="button" onClick={editNote}>
-            <HiPencilAlt size={17} />
-          </button>
-          <button id={note.id} type="button" onClick={deleteNote}>
-            <HiOutlineTrash size={17} />
-          </button>
+        <div className="single-card" key={note.id}>
+          <div className="header-card">
+            <h1 className="titleof-card">{note.title}</h1>
+            <button className="editbuttonof-card" id={note.id} type="button" onClick={editNote}>
+              <HiOutlinePencilAlt size={17} />
+            </button>
+            <button className="deletebuttonof-card" id={note.id} type="button" onClick={deleteNote}>
+              <HiOutlineTrash size={17} />
+            </button>
+          </div>
+          <div className="textof-card">{note.note}</div>
           {editing === note.id ? (
             <EditingPad
               newTitle={newTitle}

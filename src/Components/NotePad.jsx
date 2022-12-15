@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./NotePad.css";
 
 export default function NotePad({
   title,
@@ -10,6 +11,7 @@ export default function NotePad({
   return (
     <form>
       <input
+        className="title-input"
         label="note-title"
         placeholder="Note Title"
         type="text"
@@ -17,13 +19,19 @@ export default function NotePad({
         onChange={setTitle}
       />
       <input
+        className="text-input"
         label="note-text"
         placeholder="Write your note here"
         type="text"
         value={note}
         onChange={setNote}
       />
-      <button type="button" onClick={submitNote} disabled={!title && !note}>
+      <button
+        className="send-button"
+        type="button"
+        onClick={submitNote}
+        disabled={!title && !note}
+      >
         Send
       </button>
     </form>
