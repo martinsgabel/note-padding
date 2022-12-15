@@ -65,28 +65,32 @@ export default function Home() {
 
   return (
     <main>
-      Note Padding
-      <NotePad
-        title={title}
-        note={note}
-        setTitle={(e) => setTitle(e.target.value)}
-        setNote={(e) => setNote(e.target.value)}
-        submitNote={() => submitNote()}
-      />
-      {noteList && (
-        <StickNotes
-          list={noteList}
-          editing={editing}
-          newTitle={newTitle}
-          newNote={newNote}
-          deleteNote={(e) => deleteNote(e.target.id)}
-          editNote={(e) => editingNote(e.target)}
-          saveEditedNote={(e) => saveEditedNote(e.target.id)}
-          setNewTitle={(e) => setNewTitle(e.target.value)}
-          setNewNote={(e) => setNewNote(e.target.value)}
-          cancelEditing={() => setEditing(null)}
+      <div className="pad">
+        <h1 className="title">Note Padding</h1>
+        <NotePad
+          title={title}
+          note={note}
+          setTitle={(e) => setTitle(e.target.value)}
+          setNote={(e) => setNote(e.target.value)}
+          submitNote={() => submitNote()}
         />
-      )}
+      </div>      
+      <div className="notes">
+        {noteList && (
+          <StickNotes
+            list={noteList}
+            editing={editing}
+            newTitle={newTitle}
+            newNote={newNote}
+            deleteNote={(e) => deleteNote(e.target.id)}
+            editNote={(e) => editingNote(e.target)}
+            saveEditedNote={(e) => saveEditedNote(e.target.id)}
+            setNewTitle={(e) => setNewTitle(e.target.value)}
+            setNewNote={(e) => setNewNote(e.target.value)}
+            cancelEditing={() => setEditing(null)}
+          />
+        )}
+      </div>      
     </main>
   );
 }

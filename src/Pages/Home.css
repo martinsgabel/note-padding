@@ -4,5 +4,32 @@ body {
 
 main {
   width: 70%;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: grey;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pad {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
+  padding: 10px;
+  background-color: yellow;
+  width: 30%;
+}
+
+.title {
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.notes {
+  background-color: aquamarine
 }
