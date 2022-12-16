@@ -6,7 +6,7 @@
 
 .listof-cards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -18,7 +18,7 @@
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
-  width: 160px;
+  width: 40%;
   height: 150px;
   flex-wrap: wrap;
 }
@@ -48,6 +48,8 @@
   padding-left: 1px;
   flex-grow: 3;
   padding-top: 5px;
+  flex-wrap: wrap;
+  overflow: clip;
 }
 
 .textof-card {

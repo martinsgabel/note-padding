@@ -18,7 +18,7 @@ export default function NotePad({
         value={title}
         onChange={setTitle}
       />
-      <input
+      <textarea
         className="text-input"
         label="note-text"
         placeholder="Write your note here"
