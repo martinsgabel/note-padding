@@ -10,23 +10,35 @@ export default function EditingPad({
   cancelEditing,
 }) {
   return (
-    <form>
+    <form className="editing-form">
       <input
+        className="editing-title-input"
         label="note-title"
         type="text"
         value={newTitle}
         onChange={setNewTitle}
       />
       <input
+        className="editing-text-input"
         label="note-text"
         type="text"
         value={newNote}
         onChange={setNewNote}
       />
-      <button id={id} type="button" onClick={saveEditedNote}>
+      <button
+        className="editing-save-button"
+        id={id} 
+        type="button" 
+        onClick={saveEditedNote}
+      >
         Save
       </button>
-      <button id={id} type="button" onClick={cancelEditing}>
+      <button
+        className="editing-cancel-button"
+        id={id} 
+        type="button" 
+        onClick={cancelEditing}
+      >
         Cancel
       </button>
     </form>
