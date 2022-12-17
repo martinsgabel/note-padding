@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./EditingPad.css";
 
 export default function EditingPad({
   newTitle,
@@ -18,29 +19,31 @@ export default function EditingPad({
         value={newTitle}
         onChange={setNewTitle}
       />
-      <input
+      <textarea
         className="editing-text-input"
         label="note-text"
         type="text"
         value={newNote}
         onChange={setNewNote}
       />
-      <button
-        className="editing-save-button"
-        id={id} 
-        type="button" 
-        onClick={saveEditedNote}
-      >
-        Save
-      </button>
-      <button
-        className="editing-cancel-button"
-        id={id} 
-        type="button" 
-        onClick={cancelEditing}
-      >
-        Cancel
-      </button>
+      <div className="editing-buttons">
+        <button
+          className="editing-save-button"
+          id={id} 
+          type="button" 
+          onClick={saveEditedNote}
+        >
+          Save
+        </button>
+        <button
+          className="editing-cancel-button"
+          id={id} 
+          type="button" 
+          onClick={cancelEditing}
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }
