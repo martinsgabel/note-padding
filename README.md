@@ -6,4 +6,4 @@ Basic note-pad application, **front-end** only.
 - [X] Input Validation
 - [X] Deleting Notes
 - [X] Editing Notes
-- [ ] Stylizing
+- [X] Stylizing
