@@ -5,67 +5,68 @@
 }
 
 body {
-  background-color: #0d1011;
+  background-color: #161616;
 }
 
 main {
   width: 70%;
   height: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  flex-wrap: nowrap;
 }
 
 .pad {
+  align-items: center;
+  background-color: #202020;
+  border: 0.5px solid #111111;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  background-color: #2c3639;
-  border-right: 2px solid #a27b5c;
-  border-bottom: 2px solid #a27b5c;
-  border-radius: 10px;
+  justify-content: top;
+  width: 400px;
+  flex-basis: 40%;
 }
 
-@font-face {
-  font-family: "Baskerville Bold-Italic";
-  src: url(../Components/Fonts/BaskervilleBoldItalicBT.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital@1&display=swap');
 
 .title {
   color: #dcd7c9;
-  font-family: "Baskerville Bold-Italic";
-  font-size: 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  align-self: stretch;
+  border-bottom: 0.5px solid #111111;
+  padding: 11px 40px;
+  text-align: center;
 }
 
 .notes {
   overflow: auto;
-  flex-grow: 2;
 }
 
 .notes::-webkit-scrollbar {
-  border-radius: 10px;
+  border-radius: 5px;
+  width: 10px;
 }
 
 .notes::-webkit-scrollbar-track {
-  background-color: #0d1011;
-  border-radius: 10px;
+  background-color: #161616;
 }
 
 .notes::-webkit-scrollbar-button {
   display: none;
+  width: 3px;
 }
 
 .notes::-webkit-scrollbar-thumb {
-  background-color: #2c3639;
-  border-radius: 10px;
-  border-right: 2px solid #a27b5c;
-  border-bottom: 2px solid #a27b5c;
+  background-color: #202020;
+  border: 0.5px solid #111111;
 }

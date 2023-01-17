@@ -7,68 +7,80 @@
 form {
   display: flex;
   flex-direction: column;
+  align-self: bottom;
 }
 
 .title-input,
 .text-input {
-  border-radius: 10px;
   background-color: transparent;
 }
 
 .title-input {
   color: #dcd7c9;
-  font-family: "Baskerville Bold-Italic";
-  font-size: 1.3em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   box-sizing: border-box;
-  padding: 10px;
-  border: 1px solid #dcd7c9;
+  padding: 10px 2px;
+  border-bottom: 0.5px solid #111111;
   outline: none;
   margin-top: 10px;
 }
 
+.title-input:active,
+.title-input:hover {
+  border-bottom: 0.5px solid #111111;
+  outline: none;
+}
+
 .text-input {
   color: #dcd7c9;
-  font-family: "Baskerville";
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   font-size: 1em;
   letter-spacing: 0.04em;
   box-sizing: border-box;
   margin: 10px 0px;
-  border: 1px solid #dcd7c9;
-  padding: 10px;
-  height: 250px;
+  border-left: 0.5px solid #111111;
+  border-right: 0.5px solid #111111;
+  padding: 0 10px;
+  height: 280px;
   resize: none;
   outline: none;
 }
 
-.title-input:active,
-.title-input:hover,
 .text-input:active,
 .text-input:hover {
-  border: 1px solid #dcd7c9;
+  border-left: 0.5px solid #111111;
+  border-right: 0.5px solid #111111;
   outline: none;
 }
 
 .text-input::placeholder {
   color: #dcd7c981;
+  font-weight: 300;
   font-size: 1em;
 }
 
 .send-button, .send-button:active {
-  color: #0d1011;
+  color: #dcd7c9;
+  border: 0.5px solid #dcd7c998;
   text-transform: uppercase;
-  font-family: "Baskerville Bold-Italic";
-  font-size: 1em;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
   letter-spacing: 2px;
   font-weight: bold;
-  background-color: #dcd7c9;
+  background-color: transparent;
   padding: 10px 0px;
-  border-radius: 10px;
 }
 
 .send-button:disabled {
-  color: #0d1011;
+  color: #dcd7c998;
+  border: 0.5px solid #dcd7c92f;
   text-transform: uppercase;
-  background-color: #dcd7c9a4;
+  background-color: transparent;
   padding: 10px 0px;
-  border-radius: 10px;
 }

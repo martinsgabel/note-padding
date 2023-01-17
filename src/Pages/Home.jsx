@@ -13,6 +13,10 @@ export default function Home() {
     JSON.parse(localStorage.getItem("noteList")) ?? []
   );
 
+  useEffect(() => {
+    localStorage.setItem("noteList", JSON.stringify(noteList));
+  }, [noteList]);
+  
   function submitNote() {
     const noteObj = {
       id: Math.floor(Math.random() * 90000) + 10000,
@@ -27,10 +31,6 @@ export default function Home() {
     setNote("");
     setTitle("");
   }
-
-  useEffect(() => {
-    localStorage.setItem("noteList", JSON.stringify(noteList));
-  }, [noteList]);
 
   function deleteNote(id) {
     const updatedList = noteList.filter((item) => item.id !== Number(id));
