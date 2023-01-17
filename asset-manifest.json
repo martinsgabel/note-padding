@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/note-padding/static/css/main.c58157bc.css",
+    "main.js": "/note-padding/static/js/main.c486edd1.js",
+    "static/js/787.cde741ba.chunk.js": "/note-padding/static/js/787.cde741ba.chunk.js",
+    "index.html": "/note-padding/index.html",
+    "main.c58157bc.css.map": "/note-padding/static/css/main.c58157bc.css.map",
+    "main.c486edd1.js.map": "/note-padding/static/js/main.c486edd1.js.map",
+    "787.cde741ba.chunk.js.map": "/note-padding/static/js/787.cde741ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c58157bc.css",
+    "static/js/main.c486edd1.js"
+  ]
+}
